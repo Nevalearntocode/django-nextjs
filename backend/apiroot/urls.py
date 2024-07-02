@@ -10,6 +10,8 @@ urlpatterns = [
     path("auth/", include("djoser.urls")),
     # /jwt/create/: This endpoint is used for logging in, where it authenticates the user and returns a JWT for subsequent authenticated requests.
     # /jwt/refresh/: This endpoint is for refreshing an existing access token by providing a valid refresh token, thus granting a new access token.
+    # /jwt/verify/: This endpoint is used for verifying an access token.
     path("auth/", include("djoser.urls.jwt")),
     path("auth/logout/", LogoutView.as_view()),
+    path("admin/", admin.site.urls),
 ]
